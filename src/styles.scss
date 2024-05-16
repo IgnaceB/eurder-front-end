@@ -1,1 +1,130 @@
-/* You can add global styles to this file, and also import other style files */
+
+// Variables de couleurs
+$primary-color: #803AC5; // Violet
+$secondary-color: #80C53A; // Vert
+$primary-text-color: #333; // Texte principal
+$secondary-text-color: #fff; // Texte secondaire
+$background-color: #f5f5f5; // Couleur de fond
+$border-color: #ddd; // Couleur des bordures
+
+// Variables typographiques
+$font-family: 'Helvetica Neue', Arial, sans-serif;
+$base-font-size: 16px;
+$line-height: 1.5;
+
+// Variables de bouton
+$button-padding: 0.75rem 1.25rem;
+$button-border-radius: 0.25rem;
+
+// Global Styles
+body {
+  font-family: $font-family;
+  font-size: $base-font-size;
+  line-height: $line-height;
+  color: $primary-text-color;
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Header
+header {
+  background-color: $primary-color;
+  color: $secondary-text-color;
+  padding: 1rem;
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    color: $secondary-text-color;
+  }
+}
+
+// Buttons
+.button {
+  display: inline-block;
+  padding: $button-padding;
+  border-radius: $button-border-radius;
+  text-align: center;
+  text-decoration: none;
+  color: $secondary-text-color;
+  background-color: $primary-color;
+  border: 1px solid transparent;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+
+  &--secondary {
+    background-color: $secondary-color;
+
+    &:hover {
+      background-color: darken($secondary-color, 10%);
+    }
+  }
+}
+
+// Forms
+input, textarea, select {
+  font-family: $font-family;
+  font-size: $base-font-size;
+  padding: 0.5rem;
+  border: 1px solid $border-color;
+  border-radius: $button-border-radius;
+  margin-bottom: 1rem;
+  width: 100%;
+
+  &:focus {
+    border-color: $primary-color;
+    outline: none;
+  }
+}
+
+// Footer
+footer {
+  background-color: $primary-color;
+  color: $secondary-text-color;
+  padding: 1rem;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+}
+
+// Utility Classes
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.mt-1 { margin-top: 1rem; }
+.mb-1 { margin-bottom: 1rem; }
+.ml-1 { margin-left: 1rem; }
+.mr-1 { margin-right: 1rem; }
+
+.pt-1 { padding-top: 1rem; }
+.pb-1 { padding-bottom: 1rem; }
+.pl-1 { padding-left: 1rem; }
+.pr-1 { padding-right: 1rem; }

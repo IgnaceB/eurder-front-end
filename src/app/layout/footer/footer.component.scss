@@ -1,0 +1,27 @@
+
+
+footer {
+  background-color: #803AC5;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer .footer-nav {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+footer .footer-nav a {
+  color: #fff;
+}
+
+
