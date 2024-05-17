@@ -1,5 +1,11 @@
 <section id="main-layout">
 <app-header></app-header>
-<router-outlet></router-outlet>
+  @if(userService.user){
+    <h1>ca marche</h1>
+    <router-outlet></router-outlet>
+  }
+  @else {
+    <router-outlet name="login"></router-outlet>
+  }
 <app-footer></app-footer>
 </section>

@@ -9,15 +9,15 @@ import {Observable} from "rxjs";
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log(sessionStorage.getItem('id'))
-    req = req.clone({
-      setHeaders: {
-        'Content-Type' : 'application/json; charset=utf-8',
-        'Accept'       : 'application/json',
-        'Authorization': `Basic ${btoa(`${sessionStorage.getItem('id')}:${sessionStorage.getItem('password')}`)}`,
-      },
-    });
-
+    if (sessionStorage.getItem('id')&&sessionStorage.getItem('password')) {
+      req = req.clone({
+        setHeaders: {
+          'Content-Type': 'application/json; charset=utf-8',
+          'Accept': 'application/json',
+          'Authorization': `Basic ${btoa(`${sessionStorage.getItem('id')!.replaceAll('"', '')}:${sessionStorage.getItem('password')!.replaceAll('"', '')}`)}`,
+        },
+      });
+    }
     return next.handle(req);
   }
 

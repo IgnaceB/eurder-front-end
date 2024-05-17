@@ -4,13 +4,16 @@ import {UserService} from "../../services/user.service";
 import {User} from "../../models/user";
 import {CreateUserForm} from "../../fomrs/create-user-form";
 import {UserMapper} from "../../services/mappers/user.mapper";
-import {Observer} from "rxjs";
+import {Observer, pipe} from "rxjs";
+import {RouterLink, RouterLinkActive} from "@angular/router";
 
 @Component({
   selector: 'app-create-user',
   standalone: true,
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterLinkActive,
+    RouterLink
   ],
   templateUrl: './create-user.component.html',
   styleUrl: './create-user.component.scss'
@@ -32,24 +35,21 @@ export class CreateUserComponent {
   readonly userMapper :UserMapper = new UserMapper();
 
   onSubmit():void{
-
     const observer:Observer<any> = {
-      next: res => console.log('Observer got a next value: ' + JSON.stringify(res.body)),
+      next: res => res,
       error: err =>{
         let errorMessage :string=`${err.error.message}\n----\n`
         for(const property in err.error.errors) {
           errorMessage += `${property} : ${err.error.errors[property]}\n----\n`;
         }
-        alert(errorMessage)},
+        alert(errorMessage)
+      console.log(err)},
       complete: () => this.createUserForm.reset(),
     };
 
-    let user :Partial<User> = this.userMapper.createtoUser(this.createUserForm);
-    let response = this.userService.createUser(this.userMapper.createtoUser(this.createUserForm)).subscribe(
+    this.userService.createUser(this.userMapper.createtoUser(this.createUserForm)).subscribe(
       observer);
 
-
-/*    console.log(response)*/
 
   }
 

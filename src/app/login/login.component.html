@@ -16,6 +16,13 @@
         </div>
       </form>
     </div>
+    <a type="button"
+       [routerLink]="[{ outlets: { login: ['subscribe'] } }]"
+       routerLinkActive="active"
+       ariaCurrentWhenActive="page"
+       class="button">
+      Create a new Account
+    </a>
   </main>
 
 </section>
