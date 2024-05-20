@@ -27,15 +27,16 @@
         <label for="password">Password</label>
         <input type="text" formControlName="password" id="password" name="password" required>
       </div>
-      <button type="submit" class="button">submit</button>
+      <button type="submit" class="button">Register</button>
+      <button type="button"
+              routerLink="/"
+              routerLinkActive="active"
+              ariaCurrentWhenActive="page"
+              class="button">
+        Go back to Login
+      </button>
     </form>
   </div>
-  <a type="button"
-     routerLink="/"
-     routerLinkActive="active"
-     ariaCurrentWhenActive="page"
-     class="button">
-    Go back to Login
-  </a>
+
 </main>
 </section>

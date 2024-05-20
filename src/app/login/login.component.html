@@ -12,17 +12,16 @@
           <label for="password">Password</label>
           <input type="text" formControlName="password" id="password" name="password" required>
         </div>
-        <button type="submit" class="button">submit</button>
+        <button type="submit" class="button">Login</button>
+          <button type="button"
+                  [routerLink]="[{ outlets: { login: ['subscribe'] } }]"
+                  routerLinkActive="active"
+                  ariaCurrentWhenActive="page"
+                  class="button">
+            Create a new Account
+          </button>
         </div>
       </form>
     </div>
-    <a type="button"
-       [routerLink]="[{ outlets: { login: ['subscribe'] } }]"
-       routerLinkActive="active"
-       ariaCurrentWhenActive="page"
-       class="button">
-      Create a new Account
-    </a>
   </main>
-
 </section>

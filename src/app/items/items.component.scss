@@ -1,0 +1,67 @@
+section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+
+  .item-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .item-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    .item-name {
+      font-size: 1.5rem;
+      margin: 10px 0;
+      color: #333;
+    }
+
+    .item-description {
+      font-size: 1rem;
+      margin: 10px 0;
+      color: #666;
+    }
+
+    .item-price {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin: 10px 0;
+      color: #803AC5; // Using the purple color provided
+    }
+
+    .button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #80C53A; // Using the green color provided
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+
+      &:hover {
+        background-color: darken(#80C53A, 10%);
+      }
+    }
+  }
+}

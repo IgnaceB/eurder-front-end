@@ -1,1 +1,17 @@
-<p>items works!</p>
+<section>
+  @for (item of items$ | async ; track item.id){
+    <div>
+    <img src="assets/images/item.jpg" alt="{{ item.name }}" class="item-image">
+    <div class="item-details">
+      <h2 class="item-name">{{ item.name }}</h2>
+      <p class="item-description"> description : {{ item.description }}</p>
+      <p class="item-price">price : {{ item.price }}</p>
+      <input type="number" #quantity >
+      <button class="button" (click)="addToCart(item,quantity)">Add to cart</button>
+    </div>
+    </div>
+  }
+</section>
+<section>
+  <app-shopping-cart></app-shopping-cart>
+</section>

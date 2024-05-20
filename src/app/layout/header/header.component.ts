@@ -1,11 +1,12 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {User} from "../../models/user";
 import {UserService} from "../../services/user.service";
+import {ShoppingCartComponent} from "./shopping-cart/shopping-cart.component";
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [ShoppingCartComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
